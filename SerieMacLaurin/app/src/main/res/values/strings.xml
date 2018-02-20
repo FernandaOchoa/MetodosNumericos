@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SerieMacLaurin</string>
+    <string name="titulo">Calcular la Serie de MacLaurin</string>
+    <string name="valueN">Valor de n</string>
+    <string name="btnSeno">Sen</string>
+    <string name="btnCos">Cos</string>
+    <string name="btnE">e</string>
+    <string name="valueAppSerie">xxx</string>
+    <string name="lblValSerie">Valor Aproximado: </string>
+    <string name="lblEA">E Absoluto</string>
+    <string name="valueEA">sss</string>
+    <string name="lblER">E Relativo</string>
+    <string name="valueER">eeeee</string>
+    <string name="lblERP">ER Porcentual</string>
+    <string name="valueERP">zzz</string>
+</resources>
