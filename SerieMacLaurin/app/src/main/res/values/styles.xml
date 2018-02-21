@@ -10,8 +10,8 @@
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-       <!-- <item name="android:statusBarColor">@android:color/transparent</item> -->
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+      <!-- <item name="android:statusBarColor">@android:color/transparent</item> -->
+        <item name="android:navigationBarColor">@color/colorA</item>
     </style>
 
     <!-- Buttons style -->
@@ -27,7 +27,6 @@
 
     <style name="EditText" parent="AppTheme">
         <!-- Color and Fonts EditText -->
-        <item name="textColorHint">@color/colorAccent</item>
         <item name="android:textSize">@dimen/large</item>
         <item name="android:padding">10dp</item>
     </style>

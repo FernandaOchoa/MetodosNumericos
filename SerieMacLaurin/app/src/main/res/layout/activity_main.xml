@@ -38,6 +38,7 @@
             <EditText
                 android:id="@+id/edtValN"
                 style="@style/EditText"
+                android:textColorHint="@color/colorAccent"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
@@ -62,27 +63,27 @@
             <Button
                 android:id="@+id/btnSen"
                 style="@style/ButtonApp"
+                android:onClick="calcSen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:onClick="calcSen"
                 android:text="@string/btnSeno" />
 
             <Button
                 android:id="@+id/btnCos"
+                android:onClick="calcCos"
                 style="@style/ButtonApp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:onClick="calcCos"
                 android:text="@string/btnCos" />
 
             <Button
                 android:id="@+id/btnE"
                 style="@style/ButtonApp"
+                android:onClick="calcE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="calcE"
                 android:text="@string/btnE" />
 
         </LinearLayout>
@@ -108,11 +109,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
+                android:textColor="@color/colorTSec"
                 android:text="@string/lblValSerie"
                 android:textSize="@dimen/large" />
 
             <TextView
                 android:id="@+id/tvVA"
+                android:textColor="@color/colorTSec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/large"
@@ -134,12 +137,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
+                android:textColor="@color/colorTSec"
                 android:text="@string/lblEA"
                 android:textSize="@dimen/large" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTSec"
                 android:paddingLeft="6dp"
                 android:text="@string/lblER"
                 android:textSize="@dimen/large" />
@@ -148,6 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="6dp"
+                android:textColor="@color/colorTSec"
                 android:text="@string/lblERP"
                 android:textSize="@dimen/large" />
         </LinearLayout>
@@ -165,6 +171,7 @@
 
             <TextView
                 android:id="@+id/tvEA"
+                android:textColor="@color/colorTSec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".34"
@@ -174,6 +181,7 @@
 
             <TextView
                 android:id="@+id/tvER"
+                android:textColor="@color/colorTSec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
@@ -182,6 +190,7 @@
 
             <TextView
                 android:id="@+id/tvERP"
+                android:textColor="@color/colorTSec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
