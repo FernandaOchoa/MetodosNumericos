@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String a;
     int n;
 
-    DecimalFormat decimales = new DecimalFormat("0.0000");
+    DecimalFormat decimales = new DecimalFormat("0.000000");
 
     //public static final double DX = 0.01;
     static final int OPCION_SENO = 1;
@@ -121,8 +121,9 @@ public class MainActivity extends AppCompatActivity {
             coseno(fac, i);
             resultados(fac, i);
         }
-        rE = getResultadoEvaluado();
-        tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
+
+        tvValAppSerie.setText(String.valueOf(rE));
 
         errorAbsoluto(rE);
         errorRelativo(eA);
@@ -146,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
             e(fac, i);
             resultados(fac, i);
         }
-        rE = getResultadoEvaluado();
-        tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
+        tvValAppSerie.setText(String.valueOf(rE));
 
         errorAbsoluto(rE);
         errorRelativo(eA);
@@ -171,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
             seno(fac, i);
             resultados(fac, i);
         }
-        rE = getResultadoEvaluado();
-        tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
+        tvValAppSerie.setText(String.valueOf(rE));
 
         errorAbsoluto(rE);
         errorRelativo(eA);
