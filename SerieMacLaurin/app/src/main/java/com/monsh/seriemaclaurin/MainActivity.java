@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by monsh on 12/02/2018.
  * @author Jacob, Fernanda
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     // n iteraciones (EditText)
     String a;
     int n;
+
+    DecimalFormat decimales = new DecimalFormat("0.000");
 
     //public static final double DX = 0.01;
     static final int OPCION_SENO = 1;
@@ -119,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
         }
         rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+
+        errorAbsoluto(rE);
+        errorRelativo(eA);
+        errorPorcentual(eR);
     }
 
     public void calcE(View view) {
@@ -138,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
         }
         rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+
+        errorAbsoluto(rE);
+        errorRelativo(eA);
+        errorPorcentual(eR);
     }
 
     public void calcSen(View view) {
@@ -170,18 +182,21 @@ public class MainActivity extends AppCompatActivity {
 
     public double errorAbsoluto(double resEv){
         eA = Math.abs(resEv - getResultadoReal());
+        eA = Double.parseDouble(decimales.format(eA));
         tvEA.setText(String.valueOf(eA));
         return eA;
     }
 
     public double errorRelativo(double eRel){
         eR = (Math.abs(eRel)/getResultadoReal());
+        eR = Double.parseDouble(decimales.format(eR));
         tvER.setText(String.valueOf(eR));
         return  eR;
     }
 
     public void errorPorcentual(double eRelat){
         eP = (eRelat * 100);
+        eP = Double.parseDouble(decimales.format(eP));
         tvERP.setText(String.valueOf(eP));
 
     }

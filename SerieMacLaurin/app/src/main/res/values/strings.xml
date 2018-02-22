@@ -7,10 +7,10 @@
     <string name="btnE">e</string>
     <string name="valueAppSerie">xxx</string>
     <string name="lblValSerie">Valor Aproximado: </string>
-    <string name="lblEA">E Absoluto</string>
+    <string name="lblEA">E Absol.</string>
     <string name="valueEA">sss</string>
-    <string name="lblER">E Relativo</string>
+    <string name="lblER">E Relat.</string>
     <string name="valueER">eeeee</string>
-    <string name="lblERP">ER Porcentual</string>
+    <string name="lblERP">ER Porc.</string>
     <string name="valueERP">zzz</string>
 </resources>
