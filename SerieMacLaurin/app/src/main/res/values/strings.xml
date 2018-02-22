@@ -8,9 +8,9 @@
     <string name="valueAppSerie">xxx</string>
     <string name="lblValSerie">Valor Aproximado: </string>
     <string name="lblEA">E Absol.</string>
-    <string name="valueEA">sss</string>
+    <string name="valueEA"></string>
     <string name="lblER">E Relat.</string>
-    <string name="valueER">eeeee</string>
+    <string name="valueER"></string>
     <string name="lblERP">ER Porc.</string>
-    <string name="valueERP">zzz</string>
+    <string name="valueERP"></string>
 </resources>

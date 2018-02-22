@@ -38,6 +38,7 @@
             <EditText
                 android:id="@+id/edtValN"
                 style="@style/EditText"
+                android:inputType="number"
                 android:textColorHint="@color/colorAccent"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="16dp"
