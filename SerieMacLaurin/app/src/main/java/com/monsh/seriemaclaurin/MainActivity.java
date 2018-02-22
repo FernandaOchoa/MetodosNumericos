@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     static final int[] SENO = {0, 1, 0, -1};
     static final int[] COSENO = {1, 0, -1, 0};
     String polinomioSinEvaluar, polinomioSustituido, polinomioEvaluado;
-    double resultadoEvaluado;
+    double resultadoEvaluado, eA, eR, eP, rE, p;
     double resultadoReal;
 
     //Para evaluar las funciones calc 0.5 c
@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             coseno(fac, i);
             resultados(fac, i);
         }
+        rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
     }
 
@@ -135,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             e(fac, i);
             resultados(fac, i);
         }
+        rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
     }
 
@@ -153,13 +155,35 @@ public class MainActivity extends AppCompatActivity {
             seno(fac, i);
             resultados(fac, i);
         }
+        rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+        errorAbsoluto(rE);
+        errorRelativo(eA);
+        errorPorcentual(eR);
     }
 
     private void resultados(int fac, int i) {
         polinomioSinEvaluar += "(x^" + i + ")/" + fac + "  ";
         polinomioEvaluado += "(x^" + i + ")/" + fac + "  ";
         polinomioSustituido += "(x^" + i + ")/" + fac + "  ";
+    }
+
+    public double errorAbsoluto(double resEv){
+        eA = Math.abs(resEv - getResultadoReal());
+        tvEA.setText(String.valueOf(eA));
+        return eA;
+    }
+
+    public double errorRelativo(double eRel){
+        eR = (Math.abs(eRel)/getResultadoReal());
+        tvER.setText(String.valueOf(eR));
+        return  eR;
+    }
+
+    public void errorPorcentual(double eRelat){
+        eP = (eRelat * 100);
+        tvERP.setText(String.valueOf(eP));
+
     }
 
     public String getPolinomioSinEvaluar() {  return polinomioSinEvaluar;  }
