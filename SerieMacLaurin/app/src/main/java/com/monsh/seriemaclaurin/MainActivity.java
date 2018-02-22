@@ -1,8 +1,10 @@
 package com.monsh.seriemaclaurin;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -130,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
         errorPorcentual(eR);
 
         edtValorN.setText("");
+
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
     public void calcE(View view) {
@@ -155,6 +160,9 @@ public class MainActivity extends AppCompatActivity {
         errorPorcentual(eR);
 
         edtValorN.setText("");
+
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     public void calcSen(View vi) {
@@ -180,6 +188,9 @@ public class MainActivity extends AppCompatActivity {
         errorPorcentual(eR);
 
         edtValorN.setText("");
+
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(vi.getWindowToken(), 0);
     }
 
     private void resultados(int fac, int i) {
