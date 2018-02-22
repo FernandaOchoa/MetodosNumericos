@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String a;
     int n;
 
-    DecimalFormat decimales = new DecimalFormat("0.000");
+    DecimalFormat decimales = new DecimalFormat("0.0000");
 
     //public static final double DX = 0.01;
     static final int OPCION_SENO = 1;
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         resultadoReal = Math.sin(evaluar);
     }
 
-    public void calcCos(View view) {
+    public void calcCos(View v) {
         polinomioSinEvaluar = "";
         polinomioSustituido = "";
         polinomioEvaluado = "";
@@ -127,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
         errorAbsoluto(rE);
         errorRelativo(eA);
         errorPorcentual(eR);
+
+        edtValorN.setText("");
     }
 
     public void calcE(View view) {
@@ -150,9 +152,11 @@ public class MainActivity extends AppCompatActivity {
         errorAbsoluto(rE);
         errorRelativo(eA);
         errorPorcentual(eR);
+
+        edtValorN.setText("");
     }
 
-    public void calcSen(View view) {
+    public void calcSen(View vi) {
         polinomioSinEvaluar = "";
         polinomioSustituido = "";
         polinomioEvaluado = "";
@@ -169,9 +173,12 @@ public class MainActivity extends AppCompatActivity {
         }
         rE = getResultadoEvaluado();
         tvValAppSerie.setText(String.valueOf(getResultadoEvaluado()));
+
         errorAbsoluto(rE);
         errorRelativo(eA);
         errorPorcentual(eR);
+
+        edtValorN.setText("");
     }
 
     private void resultados(int fac, int i) {
