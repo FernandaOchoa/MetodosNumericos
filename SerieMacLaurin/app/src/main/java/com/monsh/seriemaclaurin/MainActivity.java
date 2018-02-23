@@ -2,6 +2,8 @@ package com.monsh.seriemaclaurin;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -16,6 +18,7 @@ import java.text.DecimalFormat;
  * @author Jacob, Fernanda
  */
 
+
 public class MainActivity extends AppCompatActivity {
     //Instance Variables
     TextView tvTitulo, tvValAppSerie, tvEA, tvER, tvERP;
@@ -28,30 +31,11 @@ public class MainActivity extends AppCompatActivity {
     int n;
 
     DecimalFormat decimales = new DecimalFormat("0.000000");
-
-    //public static final double DX = 0.01;
-    static final int OPCION_SENO = 1;
-    static final int OPCION_COSENO = 2;
-    static final int OPCION_EXPONENCIAL = 3;
-    static final String[] ARRAY_SENO = {"Sen(x)", " + Cos(x)", " - Sen(x)", " - Cos(x)"};
-    static final String[] ARRAY_COSENO = {"Cos(x)", " - Sen(x)", " - Cos(x)", " + Sen(x)"};
-    static final String[] ARRAY_SENO_VALUE = {"Sen(0)", " + Cos(0)", " - Sen(0)", " - Cos(0)"};
-    static final String[] ARRAY_COSENO_VALUE = {"Cos(0)", " - Sen(0)", " - Cos(0)", " + Sen(0)"};
-    static final int[] SENO = {0, 1, 0, -1};
-    static final int[] COSENO = {1, 0, -1, 0};
-    String polinomioSinEvaluar, polinomioSustituido, polinomioEvaluado;
-    double resultadoEvaluado, eA, eR, eP, rE, p;
-    double resultadoReal;
-
-    //Para evaluar las funciones calc 0.5 c
-    double evaluar=0.5;
+    MetodosMatematicos m = new MetodosMatematicos();
 
     //Constructor
     public MainActivity(){
-        polinomioSinEvaluar = "";
-        polinomioSustituido = "";
-        polinomioEvaluado = "";
-        resultadoEvaluado = 0;
+
     }
 
     @Override
@@ -75,154 +59,131 @@ public class MainActivity extends AppCompatActivity {
         edtValorN = (EditText) findViewById(R.id.edtValN);
     }
 
-    public int factorial(int x) {
-        if (x == 0) {
-            return 1;
-        } else {
-            return x * factorial(x - 1);
-        }
-    }
-
-    public void e(int fac, int i) {
-        polinomioSinEvaluar += "e^x";
-        polinomioSustituido += "e^0";
-        polinomioEvaluado += String.valueOf(1);
-        resultadoEvaluado += 1 * Math.pow(evaluar, i) / fac;
-        resultadoReal = Math.pow(Math.E, evaluar);
-    }
-
-    public void coseno(int fac, int i) {
-        polinomioSinEvaluar += ARRAY_COSENO[i % 4];
-        polinomioSustituido += ARRAY_COSENO_VALUE[i % 4];
-        polinomioEvaluado += String.valueOf(COSENO[i % 4]);
-        resultadoEvaluado += COSENO[i % 4] * Math.pow(evaluar, i) / fac;
-        resultadoReal = Math.cos(evaluar);
-    }
-
-    public void seno(int fac, int i) {
-        polinomioSinEvaluar += ARRAY_SENO[i % 4];
-        polinomioSustituido += ARRAY_SENO_VALUE[i % 4];
-        polinomioEvaluado += String.valueOf(SENO[i % 4]);
-        resultadoEvaluado += SENO[i % 4] * Math.pow(evaluar, i) / fac;
-        System.out.println(resultadoEvaluado);
-        resultadoReal = Math.sin(evaluar);
-    }
-
     public void calcCos(View v) {
-        polinomioSinEvaluar = "";
-        polinomioSustituido = "";
-        polinomioEvaluado = "";
-        resultadoEvaluado = 0;
+        m.polinomioSinEvaluar = "";
+        m.polinomioSustituido = "";
+        m.polinomioEvaluado = "";
+        m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
-        n = Integer.parseInt(a);
+        if (!a.isEmpty()){
+            n = Integer.parseInt(a);
 
-        int fac;
-        for (int i = 0; i <= n; i++) {
-            fac = factorial(i);
-            coseno(fac, i);
-            resultados(fac, i);
+
+            int fac;
+            for (int i = 0; i <= n; i++) {
+                fac = m.factorial(i);
+                m.coseno(fac, i);
+                m.resultados(fac, i);
+            }
+            m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
+
+            tvValAppSerie.setText(String.valueOf(m.rE));
+
+            errorAbsoluto(m.rE);
+            errorRelativo(m.eA);
+            errorPorcentual(m.eR);
+
+            edtValorN.setText("");
+
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        } else {
+            Snackbar sb = Snackbar.make(v, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
+            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+            sb.show();
         }
-        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
 
-        tvValAppSerie.setText(String.valueOf(rE));
-
-        errorAbsoluto(rE);
-        errorRelativo(eA);
-        errorPorcentual(eR);
-
-        edtValorN.setText("");
-
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
     public void calcE(View view) {
-        polinomioSinEvaluar = "";
-        polinomioSustituido = "";
-        polinomioEvaluado = "";
-        resultadoEvaluado = 0;
+        m.polinomioSinEvaluar = "";
+        m.polinomioSustituido = "";
+        m.polinomioEvaluado = "";
+        m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
+        if (!a.isEmpty()){
         n = Integer.parseInt(a);
 
         int fac;
         for (int i = 0; i <= n; i++) {
-            fac = factorial(i);
-            e(fac, i);
-            resultados(fac, i);
+            fac = m.factorial(i);
+            m.e(fac, i);
+            m.resultados(fac, i);
         }
-        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
-        tvValAppSerie.setText(String.valueOf(rE));
+        m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
+        tvValAppSerie.setText(String.valueOf(m.rE));
 
-        errorAbsoluto(rE);
-        errorRelativo(eA);
-        errorPorcentual(eR);
+        errorAbsoluto(m.rE);
+        errorRelativo(m.eA);
+        errorPorcentual(m.eR);
 
         edtValorN.setText("");
 
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        } else {
+            Snackbar sb = Snackbar.make(view, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
+            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+            sb.show();
+        }
     }
 
     public void calcSen(View vi) {
-        polinomioSinEvaluar = "";
-        polinomioSustituido = "";
-        polinomioEvaluado = "";
-        resultadoEvaluado = 0;
+        m.polinomioSinEvaluar = "";
+        m.polinomioSustituido = "";
+        m.polinomioEvaluado = "";
+        m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
+        if (!a.isEmpty()){
         n = Integer.parseInt(a);
 
         int fac;
         for (int i = 0; i <= n; i++) {
-            fac = factorial(i);
-            seno(fac, i);
-            resultados(fac, i);
+            fac = m.factorial(i);
+            m.seno(fac, i);
+            m.resultados(fac, i);
         }
-        rE = Double.parseDouble(decimales.format(getResultadoEvaluado()));
-        tvValAppSerie.setText(String.valueOf(rE));
+        m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
+        tvValAppSerie.setText(String.valueOf(m.rE));
 
-        errorAbsoluto(rE);
-        errorRelativo(eA);
-        errorPorcentual(eR);
+        errorAbsoluto(m.rE);
+        errorRelativo(m.eA);
+        errorPorcentual(m.eR);
 
         edtValorN.setText("");
 
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(vi.getWindowToken(), 0);
+        } else {
+            Snackbar sb = Snackbar.make(vi, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
+            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+            sb.show();
+        }
     }
 
-    private void resultados(int fac, int i) {
-        polinomioSinEvaluar += "(x^" + i + ")/" + fac + "  ";
-        polinomioEvaluado += "(x^" + i + ")/" + fac + "  ";
-        polinomioSustituido += "(x^" + i + ")/" + fac + "  ";
-    }
 
     public double errorAbsoluto(double resEv){
-        eA = Math.abs(resEv - getResultadoReal());
-        eA = Double.parseDouble(decimales.format(eA));
-        tvEA.setText(String.valueOf(eA));
-        return eA;
+        m.eA = Math.abs(resEv - m.getResultadoReal());
+        m.eA = Double.parseDouble(decimales.format(m.eA));
+        tvEA.setText(String.valueOf(m.eA));
+        return m.eA;
     }
 
     public double errorRelativo(double eRel){
-        eR = (Math.abs(eRel)/getResultadoReal());
-        eR = Double.parseDouble(decimales.format(eR));
-        tvER.setText(String.valueOf(eR));
-        return  eR;
+        m.eR = (Math.abs(eRel)/m.getResultadoReal());
+        m.eR = Double.parseDouble(decimales.format(m.eR));
+        tvER.setText(String.valueOf(m.eR));
+        return  m.eR;
     }
 
     public void errorPorcentual(double eRelat){
-        eP = (eRelat * 100);
-        eP = Double.parseDouble(decimales.format(eP));
-        tvERP.setText(String.valueOf(eP));
+        m.eP = (eRelat * 100);
+        m.eP = Double.parseDouble(decimales.format(m.eP));
+        tvERP.setText(String.valueOf(m.eP));
 
     }
 
-    public String getPolinomioSinEvaluar() {  return polinomioSinEvaluar;  }
-    public String getPolinomioSustituido() {  return polinomioSustituido;  }
-    public String getPolinomioEvaluado() {  return polinomioEvaluado;  }
-    public double getResultadoEvaluado() {  return resultadoEvaluado;  }
-    public double getResultadoReal() {  return resultadoReal;  }
 }
