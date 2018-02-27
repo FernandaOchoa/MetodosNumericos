@@ -15,7 +15,7 @@ import java.text.DecimalFormat;
 
 /**
  * Created by monsh on 12/02/2018.
- * @author Jacob, Fernanda
+ * @author Jacob, Fernanda, MariaJose
  */
 
 
@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
         a = edtValorN.getText().toString();
         if (!a.isEmpty()){
             n = Integer.parseInt(a);
-
-
             int fac;
             for (int i = 0; i <= n; i++) {
                 fac = m.factorial(i);

@@ -2,6 +2,7 @@ package com.monsh.seriemaclaurin;
 
 /**
  * Created by monsh on 19/02/2018.
+ * @author Jacob, Fernanda
  */
 
 public class MetodosMatematicos {
