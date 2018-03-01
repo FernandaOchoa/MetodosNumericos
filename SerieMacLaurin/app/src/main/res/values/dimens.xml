@@ -5,4 +5,5 @@
     <dimen name="xlarge">26sp</dimen>
     <dimen name="xxlarge">28sp</dimen>
     <dimen name="xxxlarge">30sp</dimen>
+    <dimen name="xxxxlarge">42sp</dimen>
 </resources>
