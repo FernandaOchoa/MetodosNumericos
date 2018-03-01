@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
     //Instance Variables
     TextView tvTitulo, tvValAppSerie, tvEA, tvER, tvERP;
     Button btnSen, btnCos, btnE;
-    TextView edtValorN;
+    EditText edtValorN, edtValorX;
     int v;
 
     // n iteraciones (EditText)
-    String a;
+    String a,b;
     int n;
+    double eval;
 
     DecimalFormat decimales = new DecimalFormat("0.000000");
     MetodosMatematicos m = new MetodosMatematicos();
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         btnCos = (Button) findViewById(R.id.btnCos);
         btnE = (Button) findViewById(R.id.btnE);
         edtValorN = (EditText) findViewById(R.id.edtValN);
+        edtValorX =(EditText) findViewById(R.id.edtValX);
     }
 
     public void calcCos(View v) {
@@ -66,12 +68,14 @@ public class MainActivity extends AppCompatActivity {
         m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
-        if (!a.isEmpty()){
+        b = edtValorX.getText().toString();
+        if (!a.isEmpty() && !b.isEmpty()){
             n = Integer.parseInt(a);
+            eval = Double.parseDouble(b);
             int fac;
             for (int i = 0; i <= n; i++) {
                 fac = m.factorial(i);
-                m.coseno(fac, i);
+                m.coseno(fac, i, eval);
                 m.resultados(fac, i);
             }
             m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             errorPorcentual(m.eR);
 
             edtValorN.setText("");
+            edtValorX.setText("");
 
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -101,13 +106,16 @@ public class MainActivity extends AppCompatActivity {
         m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
-        if (!a.isEmpty()){
+        b = edtValorX.getText().toString();
+
+        if (!a.isEmpty() && !b.isEmpty()){
         n = Integer.parseInt(a);
+        eval = Double.parseDouble(b);
 
         int fac;
         for (int i = 0; i <= n; i++) {
             fac = m.factorial(i);
-            m.e(fac, i);
+            m.e(fac, i, eval);
             m.resultados(fac, i);
         }
         m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
@@ -118,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         errorPorcentual(m.eR);
 
         edtValorN.setText("");
+        edtValorX.setText("");
 
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
@@ -135,13 +144,15 @@ public class MainActivity extends AppCompatActivity {
         m.resultadoEvaluado = 0;
 
         a = edtValorN.getText().toString();
-        if (!a.isEmpty()){
+        b = edtValorX.getText().toString();
+        if (!a.isEmpty()&& !b.isEmpty()){
         n = Integer.parseInt(a);
+        eval = Double.parseDouble(b);
 
         int fac;
         for (int i = 0; i <= n; i++) {
             fac = m.factorial(i);
-            m.seno(fac, i);
+            m.seno(fac, i, eval);
             m.resultados(fac, i);
         }
         m.rE = Double.parseDouble(decimales.format(m.getResultadoEvaluado()));
@@ -152,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         errorPorcentual(m.eR);
 
         edtValorN.setText("");
+        edtValorX.setText("");
 
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(vi.getWindowToken(), 0);

@@ -2,6 +2,7 @@
     <string name="app_name">SerieMacLaurin</string>
     <string name="titulo">Calcular la Serie de MacLaurin</string>
     <string name="valueN">Valor de n</string>
+    <string name="valueX">Valor a Evaluar</string>
     <string name="btnSeno">Sen</string>
     <string name="btnCos">Cos</string>
     <string name="btnE">e</string>

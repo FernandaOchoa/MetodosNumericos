@@ -11,7 +11,7 @@ public class MetodosMatematicos {
     double resultadoReal;
 
     //Para evaluar las funciones calc 0.5 c
-    double evaluar=0.5;
+    //double evaluar=0.5;
 
 
     //public static final double DX = 0.01;
@@ -41,7 +41,7 @@ public class MetodosMatematicos {
         }
     }
 
-    public void e(int fac, int i) {
+    public void e(int fac, int i, double evaluar) {
         polinomioSinEvaluar += "e^x";
         polinomioSustituido += "e^0";
         polinomioEvaluado += String.valueOf(1);
@@ -49,7 +49,7 @@ public class MetodosMatematicos {
         resultadoReal = Math.pow(Math.E, evaluar);
     }
 
-    public void coseno(int fac, int i) {
+    public void coseno(int fac, int i, double evaluar) {
         polinomioSinEvaluar += ARRAY_COSENO[i % 4];
         polinomioSustituido += ARRAY_COSENO_VALUE[i % 4];
         polinomioEvaluado += String.valueOf(COSENO[i % 4]);
@@ -57,7 +57,7 @@ public class MetodosMatematicos {
         resultadoReal = Math.cos(evaluar);
     }
 
-    void seno(int fac, int i) {
+    void seno(int fac, int i,double evaluar) {
         polinomioSinEvaluar += ARRAY_SENO[i % 4];
         polinomioSustituido += ARRAY_SENO_VALUE[i % 4];
         polinomioEvaluado += String.valueOf(SENO[i % 4]);

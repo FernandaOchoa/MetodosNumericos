@@ -43,9 +43,21 @@
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/valueN"
+                />
+            <EditText
+                android:id="@+id/edtValX"
+                style="@style/EditText"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorAccent"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/valueX"
                 />
 
         </LinearLayout>
