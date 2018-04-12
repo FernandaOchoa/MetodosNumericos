@@ -6,4 +6,7 @@
     <dimen name="xxlarge">28sp</dimen>
     <dimen name="xxxlarge">30sp</dimen>
     <dimen name="xxxxlarge">42sp</dimen>
+
+    <dimen name="text_size">30dp</dimen>
+    <dimen name="selected_text_size">35dp</dimen>
 </resources>

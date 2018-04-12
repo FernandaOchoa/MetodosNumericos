@@ -1,4 +1,4 @@
-package com.monsh.seriemaclaurin;
+package com.monsh.seriemaclaurin.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.monsh.seriemaclaurin.calculos.MetodosMatematicos;
+import com.monsh.seriemaclaurin.R;
 
 import java.text.DecimalFormat;
 
@@ -86,15 +89,9 @@ public class MainActivity extends AppCompatActivity {
             errorRelativo(m.eA);
             errorPorcentual(m.eR);
 
-            edtValorN.setText("");
-            edtValorX.setText("");
-
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+            cleanBoard(v);
         } else {
-            Snackbar sb = Snackbar.make(v, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
-            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
-            sb.show();
+            alertEmptyMsg(v);
         }
 
     }
@@ -125,15 +122,9 @@ public class MainActivity extends AppCompatActivity {
         errorRelativo(m.eA);
         errorPorcentual(m.eR);
 
-        edtValorN.setText("");
-        edtValorX.setText("");
-
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            cleanBoard(view);
         } else {
-            Snackbar sb = Snackbar.make(view, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
-            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
-            sb.show();
+            alertEmptyMsg(view);
         }
     }
 
@@ -162,15 +153,9 @@ public class MainActivity extends AppCompatActivity {
         errorRelativo(m.eA);
         errorPorcentual(m.eR);
 
-        edtValorN.setText("");
-        edtValorX.setText("");
-
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(vi.getWindowToken(), 0);
+            cleanBoard(vi);
         } else {
-            Snackbar sb = Snackbar.make(vi, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
-            sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
-            sb.show();
+            alertEmptyMsg(vi);
         }
     }
 
@@ -194,6 +179,20 @@ public class MainActivity extends AppCompatActivity {
         m.eP = Double.parseDouble(decimales.format(m.eP));
         tvERP.setText(String.valueOf(m.eP));
 
+    }
+
+    private void alertEmptyMsg(View vi) {
+        Snackbar sb = Snackbar.make(vi, "Por favor ingresa un valor",Snackbar.LENGTH_SHORT);
+        sb.getView().setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+        sb.show();
+    }
+
+    private void cleanBoard(View v) {
+        edtValorN.setText("");
+        edtValorX.setText("");
+
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
 }

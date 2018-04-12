@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.AlgoritmosActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/tittleU2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large" />
+
+    <!-- Panel Funcion -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtAx"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fnAx"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/small" />
+
+        <EditText
+            android:id="@+id/edtBx"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fnBx"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/small" />
+
+        <EditText
+            android:id="@+id/edtCx"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fnCx"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/small" />
+
+        <EditText
+            android:id="@+id/edtDx"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fnDx"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/small" />
+
+        <EditText
+            android:id="@+id/edtE"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fnE"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/small" />
+
+    </LinearLayout>
+
+    <!-- Panel Limites -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/edtA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:hint="@string/limA"
+            android:inputType="number"
+            android:maxEms="2"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <EditText
+            android:id="@+id/edtB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:hint="@string/limB"
+            android:inputType="number"
+            android:maxEms="2"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+        <EditText
+            android:id="@+id/edtEP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight=".3"
+            android:gravity="center"
+            android:hint="@string/err"
+            android:inputType="number"
+            android:maxEms="2"
+            android:textAlignment="center"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="@dimen/xlarge" />
+
+    </LinearLayout>
+
+    <!-- Panel Botones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnBis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight=".4"
+            android:background="@color/colorAccent"
+            android:onClick="calcBis"
+            android:text="@string/btnBiseccion"
+            android:textColor="@color/colorT"
+            android:textSize="@dimen/xlarge" />
+
+        <Button
+            android:id="@+id/btnNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".6"
+            android:background="@color/colorAccent"
+            android:onClick="calcNewton"
+            android:text="@string/btnNewton"
+            android:textColor="@color/colorT"
+            android:textSize="@dimen/xlarge" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btnSec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight=".45"
+            android:background="@color/colorAccent"
+            android:onClick="calcSecante"
+            android:text="@string/btnSecante"
+            android:textColor="@color/colorT"
+            android:textSize="@dimen/xlarge" />
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".55"
+            android:background="@color/colorAccent"
+            android:onClick="calcReglaF"
+            android:text="@string/btnReglaFalsa"
+            android:textColor="@color/colorT"
+            android:textSize="@dimen/xlarge" />
+    </LinearLayout>
+
+    <!-- Panel Resultados -->
+    <LinearLayout
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+        <LinearLayout
+            android:layout_weight=".5"
+            android:weightSum="10"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvRaiz"
+                android:textColor="@color/colorTSec"
+                android:textSize="@dimen/large" />
+
+            <TextView
+                android:layout_weight="7"
+                android:id="@+id/tvRaiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorTSec"
+                android:textSize="@dimen/large" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight=".5"
+            android:weightSum="10"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvErr"
+                android:textColor="@color/colorTSec"
+                android:textSize="@dimen/large" />
+
+            <TextView
+                android:layout_weight="7"
+                android:id="@+id/tvErr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorTSec"
+                android:textSize="@dimen/large" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

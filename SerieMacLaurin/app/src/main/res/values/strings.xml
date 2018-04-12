@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SerieMacLaurin</string>
+    <string name="app_name">Metodos Numericos</string>
     <string name="titulo">Calcular la Serie de MacLaurin</string>
     <string name="valueN">Valor de n</string>
     <string name="valueX">Valor a Evaluar</string>
@@ -15,4 +15,33 @@
     <string name="lblERP">ER Porc.</string>
     <string name="valueERP"></string>
     <string name="team">Bravers</string>
+    <string name="tittleMenu">Métodos Numéricos</string>
+    <string name="subTMenu">Por favor selecciona una opción</string>
+    <string name="btnUnidad1">Unidad 1</string>
+    <string name="btnUnidad2">Unidad 2</string>
+    <!--Unidad 2 -->
+    <string name="fnAx">X^4</string>
+    <string name="fnBx">X^3</string>
+    <string name="fnCx">X^2</string>
+    <string name="fnDx">X</string>
+    <string name="fnE">E</string>
+    <string name="limA">lim a</string>
+    <string name="limB">lim b</string>
+    <string name="err">% de error</string>
+    <string name="tittleU2"> Encontrar las soluciones de un polinomio de cuarto grado</string>
+    <string name="btnBiseccion">Bisección</string>
+    <string name="btnNewton">Newton</string>
+    <string name="btnSecante">Secante</string>
+    <string name="btnReglaFalsa">R Falsa</string>
+    <string name="tvRaiz">Raiz: </string>
+    <string name="tvErr">Error: </string>
+
+    <!-- Font -->
+    <string name="roboto_regular">sans-serif</string>
+    <string name="roboto_light">sans-serif-light</string>
+    <string name="roboto_condensed">sans-serif-condensed</string>
+    <string name="roboto_thin">sans-serif-thin</string>
+    <string name="roboto_medium">sans-serif-medium</string>
+
+    <string name="number_picker_formatter">%02d</string>
 </resources>

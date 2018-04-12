@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activities.MenuActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xxxlarge"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/tittleMenu"/>
+    <TextView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/xxlarge"
+        android:textStyle="normal"
+        android:textColor="@color/colorTSec"
+        android:text="@string/subTMenu"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_marginTop="35dp"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:onClick="gotoUnidad1"
+            android:layout_weight=".5"
+            android:id="@+id/btnUnidad1"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorT"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:background="@color/colorAccent"
+            android:text="@string/btnUnidad1"/>
+        <Button
+            android:layout_weight=".5"
+            android:id="@+id/btnUnidad2"
+            android:onClick="gotoUnidad2"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorT"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:background="@color/colorAccent"
+            android:text="@string/btnUnidad2"/>
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webGit"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+</LinearLayout>

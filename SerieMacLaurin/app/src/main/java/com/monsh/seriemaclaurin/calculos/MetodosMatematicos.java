@@ -1,4 +1,4 @@
-package com.monsh.seriemaclaurin;
+package com.monsh.seriemaclaurin.calculos;
 
 /**
  * Created by monsh on 19/02/2018.
@@ -6,9 +6,9 @@ package com.monsh.seriemaclaurin;
  */
 
 public class MetodosMatematicos {
-    String polinomioSinEvaluar, polinomioSustituido, polinomioEvaluado;
-    double resultadoEvaluado, eA, eR, eP, rE, p;
-    double resultadoReal;
+    public String polinomioSinEvaluar, polinomioSustituido, polinomioEvaluado;
+    public double resultadoEvaluado, eA, eR, eP, rE, p;
+    public double resultadoReal;
 
     //Para evaluar las funciones calc 0.5 c
     //double evaluar=0.5;
@@ -26,7 +26,7 @@ public class MetodosMatematicos {
     static final int[] COSENO = {1, 0, -1, 0};
 
 
-    MetodosMatematicos(){
+    public MetodosMatematicos(){
         polinomioSinEvaluar = "";
         polinomioSustituido = "";
         polinomioEvaluado = "";
@@ -57,7 +57,7 @@ public class MetodosMatematicos {
         resultadoReal = Math.cos(evaluar);
     }
 
-    void seno(int fac, int i,double evaluar) {
+    public void seno(int fac, int i,double evaluar) {
         polinomioSinEvaluar += ARRAY_SENO[i % 4];
         polinomioSustituido += ARRAY_SENO_VALUE[i % 4];
         polinomioEvaluado += String.valueOf(SENO[i % 4]);
@@ -66,7 +66,7 @@ public class MetodosMatematicos {
         resultadoReal = Math.sin(evaluar);
     }
 
-    void resultados(int fac, int i) {
+    public void resultados(int fac, int i) {
         polinomioSinEvaluar += "(x^" + i + ")/" + fac + "  ";
         polinomioEvaluado += "(x^" + i + ")/" + fac + "  ";
         polinomioSustituido += "(x^" + i + ")/" + fac + "  ";

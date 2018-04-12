@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -9,10 +9,11 @@
 
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
       <!-- <item name="android:statusBarColor">@android:color/transparent</item> -->
-        <item name="android:navigationBarColor">@color/colorA</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorA</item>
     </style>
+
 
     <!-- Buttons style -->
 

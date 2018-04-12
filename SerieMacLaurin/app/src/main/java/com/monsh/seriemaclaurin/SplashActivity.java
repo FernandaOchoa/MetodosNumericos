@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+import com.monsh.seriemaclaurin.activities.MenuActivity;
+
 /**
  * Created by monsh on 22/02/2018.
  */
@@ -26,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent mainIntent = new Intent(SplashActivity.this, MenuActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
             }
